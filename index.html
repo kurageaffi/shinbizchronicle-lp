@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIZ CHRONICLE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="lp-wrapper"><div class="lp-section lp-1">
+    <a href="https://forms.gle/uLs4y9MdGrtqnnUo8" target="_blank">
+      <img class="consult-btn btn-1" src="images/無料相談を申し込むボタン.gif" alt="無料相談">
+    </a>
+  </div></div>
+
+  <div class="lp-wrapper"><div class="lp-section lp-2"></div></div>
+  <div class="lp-wrapper"><div class="lp-section lp-3">
+    <a href="https://forms.gle/uLs4y9MdGrtqnnUo8" target="_blank">
+      <img class="consult-btn btn-3" src="images/無料相談を申し込むボタン.gif" alt="無料相談">
+    </a>
+  </div></div>
+
+  <div class="lp-wrapper"><div class="lp-section lp-4"></div></div>
+  <div class="lp-wrapper"><div class="lp-section lp-5"></div></div>
+  <div class="lp-wrapper"><div class="lp-section lp-6"></div></div>
+
+  <div class="lp-wrapper"><div class="lp-section lp-7">
+    <iframe class="video-embed video-1" src="https://www.youtube.com/embed/OvIJLUDjRD0" frameborder="0" allowfullscreen></iframe>
+  </div></div>
+
+  <div class="lp-wrapper"><div class="lp-section lp-8"></div></div>
+
+  <div class="lp-wrapper"><div class="lp-section lp-9">
+    <iframe class="video-embed video-2" src="https://www.youtube.com/embed/sWLJFymVoaQ" frameborder="0" allowfullscreen></iframe>
+  </div></div>
+
+  <div class="lp-wrapper"><div class="lp-section lp-10"></div></div>
+
+  <div class="lp-wrapper"><div class="lp-section lp-11">
+    <div class="kuchikomi-slider-wrapper">
+  <button class="slider-btn prev" onclick="prevSlide()">◀</button>
+  <div class="kuchikomi-slider">
+    <img class="slide active" src="images/kuchikomi1.png" alt="">
+    <img class="slide" src="images/kuchikomi2.png" alt="">
+    <img class="slide" src="images/kuchikomi3.png" alt="">
+  </div>
+  <button class="slider-btn next" onclick="nextSlide()">▶</button>
+</div>
+
+  </div></div>
+
+  <div class="lp-wrapper"><div class="lp-section lp-12"></div></div>
+
+  <div class="lp-wrapper"><div class="lp-section lp-13">
+    <a href="https://forms.gle/uLs4y9MdGrtqnnUo8" target="_blank">
+      <img class="consult-btn btn-13" src="images/無料相談を申し込むボタン.gif" alt="無料相談">
+    </a>
+  </div></div>
+
+  <footer>
+    <a href="policy.html">プライバシーポリシー</a>
+    <a href="law.html">特定商取引法に基づく表記</a>
+  </footer>
+
+<script>
+  let current = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove("active");
+    });
+    slides[index].classList.add("active");
+  }
+
+  function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  function startAutoSlide() {
+    setInterval(() => {
+      nextSlide();
+    }, 6000);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    showSlide(current);
+    startAutoSlide();
+  });
+</script>
+
+
+
+</body>
+</html>
