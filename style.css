@@ -14,30 +14,26 @@ html, body {
 .lp-section {
   position: relative;
   width: 100%;
-  padding-top: 146%;
-  background-size: cover;
+  padding-top: 295%;
+  background-size: 100% 100%; /* ← coverではなく、完全フィット */
   background-position: center;
   background-repeat: no-repeat;
   z-index: 0;
   box-sizing: border-box;
+  line-height: 0; /* ← インライン要素の隙間対策 */
+  font-size: 0;   /* ← 同上 */
 }
 
-.lp-1  { background-image: url("images/lp_1.png"); }
-.lp-2  { background-image: url("images/lp_2.png"); }
-.lp-3  { background-image: url("images/lp_3.png"); }
-.lp-4  { background-image: url("images/lp_4.png"); }
-.lp-5  { background-image: url("images/lp_5.png"); }
-.lp-6  { background-image: url("images/lp_6.png"); }
-.lp-7  { background-image: url("images/lp_7.png"); }
-.lp-8  { background-image: url("images/LP_8.png"); }
-.lp-9  { background-image: url("images/lp_9.png"); }
-.lp-10 { background-image: url("images/lp_10.png"); }
-.lp-11 {
-  background-image: url("images/lp_11.png");
-  aspect-ratio: 1000 / 1460;
-}
-.lp-12 { background-image: url("images/lp_12.png"); }
-.lp-13 { background-image: url("images/lp_13.png"); }
+.lp-1  { background-image: url("images/lp-1.png"); }
+.lp-2  { background-image: url("images/lp-2.png"); }
+.lp-3  { background-image: url("images/lp-3.png"); }
+.lp-4  { background-image: url("images/lp-4.png"); }
+.lp-5  { background-image: url("images/lp-5.png"); }
+.lp-6  { background-image: url("images/lp-6.png"); }
+.lp-7  { background-image: url("images/lp-7.png"); }
+.lp-8  { background-image: url("images/lP-8.png"); }
+.lp-9  { background-image: url("images/lp-9.png"); }
+.lp-10 { background-image: url("images/lp-10.png"); }
 
 /* 動画 */
 .video-embed {
@@ -55,78 +51,22 @@ html, body {
 /* ボタン */
 .consult-btn {
   position: absolute;
-  width: 80%;
+  width: 110%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
 }
-.btn-1  { top: 80%; }
-.btn-3  { top: 77%; }
-.btn-13 { top: 77%; }
-
-/* クチコミスライダー */
-.kuchikomi-slider-wrapper {
+.btn-1  { top: 41%; }
+.btn-2  { top: 80%; }
+.btn-8 {
   position: absolute;
-  top: 28%;
+  top: 788%; /* lp-8とlp-9の中間あたり（調整してOK） */
   left: 50%;
   transform: translateX(-50%);
-  width: 70%;
-  aspect-ratio: 4 / 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 110%;
   z-index: 10;
 }
-
-.kuchikomi-slider {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: hidden;
-}
-
-.kuchikomi-slider img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
-}
-
-/* スライダーボタン */
-.slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.4);
-  color: rgba(80, 50, 30, 0.8);
-  border: none;
-  font-size: 18px;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 11;
-}
-.slider-btn.prev { left: -50px; }
-.slider-btn.next { right: -50px; }
-
-@media (max-width: 600px) {
-  .slider-btn {
-    width: 25px;
-    height: 25px;
-    font-size: 16px;
-  }
-
-  .slider-btn.prev { left: -30px; }
-  .slider-btn.next { right: -30px; }
-}
+.btn-10 { top: 82%; }
 
 /* フェード＆スライドアニメーション */
 .slide {
@@ -175,5 +115,505 @@ footer a {
 }
 
 
+/* ▼▼ここからアニメーション関連▼▼ */
 
+/* ▼ アニメーション共通クラス */
+.fade-in,
+.slide-in-left,
+.pop {
+  position: absolute;
+  z-index: 5;
+  opacity: 0;
+}
+
+/* ▼ フェードイン */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+}
+
+
+/* ▼ 左からスライド */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: transform 0.3s ease-out, opacity 0.5s ease-out;
+}
+
+.slide-in-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-up {
+  opacity: 0;
+  transform: translateY(50px); /* ← ここがY方向になってること */
+  transition: transform 0.3s ease-out, opacity 0.5s ease-out;
+}
+
+.slide-in-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ▼ ポップ（スケールアップ） */
+.pop {
+  opacity: 0;
+  transform: scale(0.6);
+  transition: transform 0.3s ease-out, opacity 0.6s ease-out;
+}
+
+.pop.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+
+
+/* ▼ 各アニメーション画像のサイズと位置調整 */
+.asobi-img {
+  position: absolute;
+  top: -1%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 5;
+}
+
+.lp-wrapper {
+  position: relative;
+}
+
+.jisseki-img {
+  position: absolute;
+  top: 55%;
+  left: -12%;
+  transform: translateX(-50%);
+  width: 130%;
+  height: auto;
+  z-index: 10;
+}
+
+/* PC表示で調整 */
+@media screen and (min-width: 768px) {
+  .jisseki-img {
+    top: 55%;
+    left: -10%;
+    width: 150%;
+    max-width: 1280px;
+  }
+}
+
+.anatanonozomi-img {
+  position: absolute;
+  top: 17%;
+  left: -15%;
+  transform: translateX(-50%);
+  width: 130%;
+  z-index: 5;
+}
+
+.msk-img {
+  position: absolute;
+  top: -2%;
+  left: 53%;
+  transform: translateX(-50%);
+  width: 130%;
+  z-index: 5;
+}
+
+.dd-img {
+  position: absolute;
+  top: 7%;
+  left: 50%; /* ← 0% → 50% にする！ */
+  transform: translateX(-50%) scale(0.6); /* ← 初期値で scale も一緒に指定 */
+  width: 100%;
+  z-index: 5;
+}
+
+.dd-img.show {
+  transform: translateX(-50%) scale(1);
+}
+
+
+.bcds-img {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 5;
+}
+
+.bou1-img {
+  position: absolute;
+  top: 37%;
+  left: -15%;
+  transform: translateX(-50%);
+  width: 105%;
+  z-index: 5;
+}
+
+.bou2-img {
+  position: absolute;
+  top: 40.7%;
+  left: -1%;
+  transform: translateX(-50%);
+  width: 105%;
+  z-index: 5;
+}
+
+.green-img {
+  position: absolute;
+  top: 70%;
+  left: 0%;
+  transform: translate(-50%, 50px);
+  width: 100%;
+  z-index: 5;
+}
+
+.pink-img {
+  position: absolute;
+  top: 48%;
+  left: 0%;
+  transform: translate(-50%, 50px);
+  width: 100%;
+  z-index: 5;
+}
+
+.blue-img {
+  position: absolute;
+  top: 21%;
+  left: 0%;
+  transform: translate(-50%, 50px);
+  width: 100%;
+  z-index: 5;
+}
+
+.orange-img {
+  position: absolute;
+  top: 2%;
+  left: 50%; /* ← 0% → 50% にする！ */
+  transform: translateX(-50%) scale(0.6); /* ← 初期値で scale も一緒に指定 */
+  width: 140%;
+  z-index: 5;
+}
+
+.orange-img.show {
+  transform: translateX(-50%) scale(1);
+}
+
+.ndm-img {
+  position: absolute;
+  top: 17%;
+  left: 0%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 5;
+}
+
+.koe-img {
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 5;
+}
+
+.zoom-img {
+  position: absolute;
+  top: 17%;
+  left: -15%;
+  transform: translateX(-50%);
+  width: 130%;
+  z-index: 5;
+}
+
+/* YouTube関連 */
+.video-thumbnail {
+  position: absolute;
+  cursor: pointer;
+  z-index: 20;
+}
+
+/* s1.png 用 */
+.thumb-1 {
+  top: 490%;
+  left: 8%;
+  width: 85%;
+}
+
+/* s2.png 用 */
+.thumb-2 {
+  top: 642%;
+  left: 8%;
+  width: 85%;
+}
+
+@media screen and (max-width: 767px) {
+  .thumb-1 {
+    top: 490%;
+    left: 8%;
+    width: 85%;
+  }
+  .thumb-2 {
+    top: 642%;
+    left: 8%;
+    width: 85%;
+  }
+}
+
+
+
+.video-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  backdrop-filter: blur(8px);
+}
+
+.video-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 128, 128, 0.7); /* 青緑＋半透明 */
+}
+
+.video-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 800px;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+}
+
+.video-content iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  background: #000;
+}
+
+.video-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.magic-circle {
+  position: absolute;
+  width: 30%;
+  aspect-ratio: 1/1;
+  pointer-events: none; /* クリックを妨げないように */
+  z-index: 21;
+}
+
+.magic-circle img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.rotating {
+  animation: rotate 10s linear infinite;
+  opacity: 0.8;
+}
+
+.saisei {
+  z-index: 2;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ▼ 位置調整（LPデザインに合わせて調整） */
+.circle-1 {
+  top: 492.5%;
+  left: 35%;
+}
+
+.circle-2 {
+  top: 645%;
+  left: 35%;
+}
+
+/* ==== REVIEW & ICONS LAYOUT (帯＋アイコン＋レビュー) ==== */
+
+/* === レビューセクション（LP9） === */
+/* ▼ 共通：初期化用 */
+.review-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+.review-img.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+
+/* ▼ PC表示：固定サイズ＆位置指定 */
+@media screen and (min-width: 768px) {
+  .toggle-icons {
+    position: absolute;
+    top: 715px; /* lp-9.pngの帯に合わせて調整 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+  }
+
+  .toggle-img {
+    width: 170px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .toggle-img.active {
+    transform: scale(1.05);
+  }
+
+  .review-wrapper {
+    position: absolute;
+    top: 11%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+  }
+}
+
+
+/* ▼ モバイル表示：vh/vwでリキッド対応 */
+@media screen and (max-width: 767px) {
+  .toggle-icons {
+    position: absolute;
+    top: 24.3%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap:1vw;
+    z-index: 10;
+  }
+
+  .toggle-img {
+    width: 17vw;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .toggle-img.active {
+    transform: scale(1.05);
+  }
+
+  .review-wrapper {
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+  }
+
+  /* 🔧 重要：再度指定しておかないとpositionがstaticになる */
+  .review-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+  }
+
+  .review-img.active {
+    opacity: 1;
+    z-index: 1;
+  }
+}
+
+:root {
+  --btn-width: 15%;
+  --btn-bottom: 8%;
+  --slide-out: 100%;
+}
+
+.floating-btn {
+  position: fixed;
+  right: 0;
+  bottom: var(--btn-bottom);
+  width: var(--btn-width);
+  transform: translateX(var(--slide-out));
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.6s ease-out, opacity 0.5s ease-out;
+  z-index: 9999;
+}
+
+.floating-btn.show {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+.floating-btn img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ▼ モバイル用（〜768px） */
+@media (max-width: 768px) {
+  :root {
+    --btn-width: 20%;
+    --btn-bottom: 12%;
+    --slide-out: 100%;
+  }
+}
+
+/* ▼ PC用（769px〜） */
+@media (min-width: 769px) {
+  :root {
+    --btn-width: 13%;
+    --btn-bottom: 7%;
+    --slide-out: 100%;
+  }
+}
 

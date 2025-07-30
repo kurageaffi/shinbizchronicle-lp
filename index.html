@@ -27,66 +27,148 @@
 </head>
 <body>
 
-  <div class="lp-wrapper"><div class="lp-section lp-1">
-    <a href="https://forms.gle/uLs4y9MdGrtqnnUo8" target="_blank"
-    onclick="gtag('event', 'click', {
-     event_category: 'CTA',
-     event_label: 'btn-1（最上部）'
-   });">
-      <img class="consult-btn btn-1" src="images/consult-button.gif" alt="無料相談">
-    </a>
-  </div></div>
+<!-- ←★ 実績画像のアニメーションとYouTube -->
+  <div class="lp-wrapper">
+  <img class="jisseki-img slide-in-left" src="images/jisseki.png" alt="実績">
+  
+  <!-- トリガー用のサムネ -->
+<img class="video-thumbnail thumb-1" src="images/s1.png" data-video="https://www.youtube.com/embed/OvIJLUDjRD0">
+<img class="video-thumbnail thumb-2" src="images/s2.png" data-video="https://www.youtube.com/embed/sWLJFymVoaQ">
 
-  <div class="lp-wrapper"><div class="lp-section lp-2"></div></div>
-  <div class="lp-wrapper"><div class="lp-section lp-3">
-    <a href="https://forms.gle/uLs4y9MdGrtqnnUo8" target="_blank"
-    onclick="gtag('event', 'click', {
-     event_category: 'CTA',
-     event_label: 'btn-1（最上部）'
-   });">
-      <img class="consult-btn btn-3" src="images/consult-button.gif" alt="無料相談">
-    </a>
-  </div></div>
-
-  <div class="lp-wrapper"><div class="lp-section lp-4"></div></div>
-  <div class="lp-wrapper"><div class="lp-section lp-5"></div></div>
-  <div class="lp-wrapper"><div class="lp-section lp-6"></div></div>
-
-  <div class="lp-wrapper"><div class="lp-section lp-7">
-    <iframe class="video-embed video-1" src="https://www.youtube.com/embed/OvIJLUDjRD0" frameborder="0" allowfullscreen></iframe>
-  </div></div>
-
-  <div class="lp-wrapper"><div class="lp-section lp-8"></div></div>
-
-  <div class="lp-wrapper"><div class="lp-section lp-9">
-    <iframe class="video-embed video-2" src="https://www.youtube.com/embed/sWLJFymVoaQ" frameborder="0" allowfullscreen></iframe>
-  </div></div>
-
-  <div class="lp-wrapper"><div class="lp-section lp-10"></div></div>
-
-  <div class="lp-wrapper"><div class="lp-section lp-11">
-    <div class="kuchikomi-slider-wrapper">
-  <button class="slider-btn prev" onclick="prevSlide()">◀</button>
-  <div class="kuchikomi-slider">
-    <img class="slide active" src="images/kuchikomi1.png" alt="">
-    <img class="slide" src="images/kuchikomi2.png" alt="">
-    <img class="slide" src="images/kuchikomi3.png" alt="">
-  </div>
-  <button class="slider-btn next" onclick="nextSlide()">▶</button>
+<!-- ▼ 魔法陣再生ボタン（s1.pngに重ねる） -->
+<div class="magic-circle circle-1">
+  <img src="images/maho.png" class="maho rotating" alt="魔法陣">
+  <img src="images/saisei.png" class="saisei" alt="再生">
 </div>
 
+<!-- ▼ 魔法陣再生ボタン（s2.pngに重ねる） -->
+<div class="magic-circle circle-2">
+  <img src="images/maho.png" class="maho rotating" alt="魔法陣">
+  <img src="images/saisei.png" class="saisei" alt="再生">
+</div>
+
+
+
+
+<!-- btn-8をラップ外に移動する -->
+<a href="https://forms.gle/uLs4y9MdGrtqnnUo8" target="_blank"
+  onclick="gtag('event', 'click', {
+    event_category: 'CTA',
+    event_label: 'btn-8'
+  });">
+  <img class="consult-btn btn-8" src="images/mbtn.gif" alt="無料相談">
+</a>
+
+
+<!-- モーダル構造（HTML内どこかに一度だけ置く） -->
+<div class="video-modal" id="videoModal">
+  <div class="video-backdrop"></div>
+  <div class="video-content">
+    <button class="video-close">×</button>
+    <iframe id="videoPlayer" src="" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+
+  <!-- ←★ LP1 -->
+  <div class="lp-section lp-1">
+    <a href="https://forms.gle/uLs4y9MdGrtqnnUo8" target="_blank"
+      onclick="gtag('event', 'click', {
+        event_category: 'CTA',
+        event_label: 'btn-1'
+      });">
+      <img class="consult-btn btn-1" src="images/mbtn.gif" alt="無料相談">
+    </a>
+
+    <img class="fade-in asobi-img" src="images/asobi.png" alt="遊び感覚でスキルが育つ">
+  </div>
+</div>
+
+  <!-- ←★ LP2 -->
+  <div class="lp-wrapper"><div class="lp-section lp-2">
+    <a href="https://forms.gle/uLs4y9MdGrtqnnUo8" target="_blank"
+      onclick="gtag('event', 'click', {
+        event_category: 'CTA',
+        event_label: 'btn-2'
+      });">
+      <img class="consult-btn btn-2" src="images/mbtn.gif" alt="無料相談">
+    </a>
+
+    <img class="anatanonozomi-img slide-in-left" src="images/anatanonozomi.png" alt="あなたの望みも思うがままに">
+  </div>
+</div>
+
+  <!-- ←★ LP3 -->
+  <div class="lp-wrapper"><div class="lp-section lp-3">
+    <img class="fade-in msk-img" src="images/msk.png" alt="もしかして…">
   </div></div>
 
-  <div class="lp-wrapper"><div class="lp-section lp-12"></div></div>
+  <!-- ←★ LP4 -->
+  <div class="lp-wrapper"><div class="lp-section lp-4">
+      <img class="pop dd-img" src="images/dd.png" alt="ドドン！">
+  </div></div>
 
-  <div class="lp-wrapper"><div class="lp-section lp-13">
-    <a href="https://forms.gle/uLs4y9MdGrtqnnUo8" target="_blank"
+  <!-- ←★ LP5 -->
+  <div class="lp-wrapper"><div class="lp-section lp-5">
+      <img class="fade-in bcds-img" src="images/bcds.png" alt="ビズクロです">
+      <img class="slide-in-left bou1-img" src="images/bou1.png" alt="ピンク帯">
+      <img class="slide-in-left bou2-img" src="images/bou2.png" alt="白い帯">
+      <img class="slide-in-up green-img" src="images/green.png" alt="緑のタイトル">
+  </div></div>
+
+  <!-- ←★ LP6 -->
+  <div class="lp-wrapper"><div class="lp-section lp-6">
+    <img class="slide-in-up pink-img" src="images/pink.png" alt="ピンクのタイトル">
+  </div></div>
+
+  <div class="lp-wrapper"><div class="lp-section lp-7">
+    <img class="slide-in-up blue-img" src="images/blue.png" alt="青のタイトル">
+  </div></div>
+
+  <div class="lp-wrapper"><div class="lp-section lp-8">
+    <img class="pop orange-img" src="images/orange.png" alt="オレンジのタイトル">
+    <img class="slide-in-left ndm-img" src="images/ndm.png" alt="なんでも">
+  </div></div>
+
+  <!-- ←★ LP9（レビュー切替セクション） -->
+<div class="lp-wrapper">
+  <div class="lp-section lp-9">
+   <img class="slide-in-left koe-img" src="images/koe.png" alt="">
+    <div class="review-toggle-wrapper">
+      <!-- アイコン表示（手動配置） -->
+      <div class="toggle-icons">
+        <img src="images/c1.png" class="toggle-img active" data-index="1">
+        <img src="images/g2.png" class="toggle-img" data-index="2">
+        <img src="images/g3.png" class="toggle-img" data-index="3">
+        <img src="images/g4.png" class="toggle-img" data-index="4">
+        <img src="images/g5.png" class="toggle-img" data-index="5">
+      </div>
+
+      <!-- レビュー表示 -->
+      <div class="review-wrapper">
+        <img src="images/r1.png" class="review-img active" id="review-1">
+        <img src="images/r2.png" class="review-img" id="review-2">
+        <img src="images/r3.png" class="review-img" id="review-3">
+        <img src="images/r4.png" class="review-img" id="review-4">
+        <img src="images/r5.png" class="review-img" id="review-5">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="lp-wrapper"><div class="lp-section lp-10">
+     <a href="https://forms.gle/uLs4y9MdGrtqnnUo8" target="_blank"
     onclick="gtag('event', 'click', {
      event_category: 'CTA',
-     event_label: 'btn-3（中腹）'
+     event_label: 'btn-10'
    });">
-      <img class="consult-btn btn-13" src="images/consult-button.gif" alt="無料相談">
+      <img class="consult-btn btn-10" src="images/mbtn.gif" alt="無料相談">
+      
     </a>
+
+      <img class="slide-in-left zoom-img" src="images/zoom.png" alt="Zoom説明">
   </div></div>
 
   <footer>
@@ -94,38 +176,99 @@
     <a href="law.html">特定商取引法に基づく表記</a>
   </footer>
 
+
+<!-- ←★ ここからアニメーション関連 -->
 <script>
-  let current = 0;
-  const slides = document.querySelectorAll(".slide");
+document.addEventListener("DOMContentLoaded", () => {
+  const targets = document.querySelectorAll(".fade-in, .slide-in-left, .slide-in-up, .pop");
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove("active");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
     });
-    slides[index].classList.add("active");
-  }
-
-  function prevSlide() {
-    current = (current - 1 + slides.length) % slides.length;
-    showSlide(current);
-  }
-
-  function nextSlide() {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  }
-
-  function startAutoSlide() {
-    setInterval(() => {
-      nextSlide();
-    }, 6000);
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    showSlide(current);
-    startAutoSlide();
+  }, {
+    threshold: 0.3
   });
+
+  targets.forEach(target => observer.observe(target));
+});
 </script>
+
+
+<!-- ←★ ここからYouTube関連 -->
+<script>
+document.querySelectorAll('.video-thumbnail').forEach(thumb => {
+  thumb.addEventListener('click', () => {
+    const videoURL = thumb.getAttribute('data-video');
+    const modal = document.getElementById('videoModal');
+    const player = document.getElementById('videoPlayer');
+    player.src = videoURL + '?autoplay=1';
+    modal.style.display = 'block';
+  });
+});
+
+document.querySelector('.video-close').addEventListener('click', () => {
+  const modal = document.getElementById('videoModal');
+  const player = document.getElementById('videoPlayer');
+  player.src = '';
+  modal.style.display = 'none';
+});
+</script>
+
+<!-- ←★ ここからレビュー関連 -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleImgs = document.querySelectorAll(".toggle-img");
+  const reviews = document.querySelectorAll(".review-img");
+
+  toggleImgs.forEach(img => {
+    img.addEventListener("click", () => {
+      const index = img.getAttribute("data-index");
+
+      // g⇄c画像切り替え
+      toggleImgs.forEach((img2, i) => {
+        if (img2.getAttribute("data-index") === index) {
+          img2.src = `images/c${index}.png`;
+          img2.classList.add("active");
+        } else {
+          const i2 = img2.getAttribute("data-index");
+          img2.src = `images/g${i2}.png`;
+          img2.classList.remove("active");
+        }
+      });
+
+      // レビュー切り替え
+      reviews.forEach((r, i) => {
+        r.classList.remove("active");
+        if (r.id === `review-${index}`) {
+          r.classList.add("active");
+        }
+      });
+    });
+  });
+});
+</script>
+
+<script>
+  const floatingBtn = document.querySelector(".floating-btn");
+
+  let isShown = false;
+  window.addEventListener("scroll", function () {
+  const fbtn = document.querySelector(".floating-btn");
+  if (!fbtn.classList.contains("show")) {
+    fbtn.classList.add("show");
+  }
+});
+
+</script>
+
+
+<a href="https://forms.gle/uLs4y9MdGrtqnnUo8" class="floating-btn" target="_blank" rel="noopener noreferrer">
+  <img src="images/fbtn.png" alt="申し込みボタン" />
+</a>
 
 
 
