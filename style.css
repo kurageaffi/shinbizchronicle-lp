@@ -302,7 +302,7 @@ footer a {
   left: 50%; /* ← 0% → 50% にする！ */
   transform: translateX(-50%) scale(0.6); /* ← 初期値で scale も一緒に指定 */
   width: 140%;
-  z-index: 2;
+  z-index: ;
 }
 
 .orange-img.show {
@@ -615,14 +615,4 @@ footer a {
     --btn-bottom: 7%;
     --slide-out: 100%;
   }
-}
-
-.lp-8 img {
-  display: block !important;
-  position: relative !important;
-  z-index: 9999 !important;
-  width: 100% !important;
-  height: auto !important;
-  opacity: 1 !important;
-  transform: none !important;
 }
