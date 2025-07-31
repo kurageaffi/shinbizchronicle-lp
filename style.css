@@ -617,3 +617,11 @@ footer a {
   }
 }
 
+.lp-8 img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 5 !important;
+}
