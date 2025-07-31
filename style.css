@@ -301,7 +301,7 @@ footer a {
   top: 2%;
   left: 50%; /* ← 0% → 50% にする！ */
   transform: translateX(-50%) scale(0.6); /* ← 初期値で scale も一緒に指定 */
-  width: 140%;
+  width: 100%;
   z-index: ;
 }
 
