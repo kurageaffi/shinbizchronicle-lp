@@ -619,9 +619,10 @@ footer a {
 
 .lp-8 img {
   display: block !important;
+  position: relative !important;
+  z-index: 9999 !important;
   width: 100% !important;
   height: auto !important;
   opacity: 1 !important;
-  visibility: visible !important;
-  z-index: 5 !important;
+  transform: none !important;
 }
