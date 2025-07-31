@@ -619,3 +619,49 @@ footer a {
   }
 }
 
+
+#opening-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+#opening-text {
+  min-height: 4em; /* line1 + line2 を見越した高さを確保 */
+  text-align: center;
+  font-family: "Hiragino Mincho Pro", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap; /* 自動改行を禁止 */
+  gap: clamp(1rem, 2vw, 2rem); /* ← この行追加！お好みで調整可 */
+  
+}
+
+#opening-line1,
+#opening-line2 {
+  opacity: 0;
+  transition: opacity 1s ease;
+  position: static; /* ← 追加 */
+}
+
+#opening-line1.fade-in,
+#opening-line2.fade-in {
+  opacity: 1;
+}
+
+#opening-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+

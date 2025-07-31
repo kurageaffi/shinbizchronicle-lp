@@ -27,6 +27,15 @@
 </head>
 <body>
 
+<div id="opening-overlay">
+  <div id="opening-text">
+    <div id="opening-line1">どうせインスタ学ぶなら</div>
+    <div id="opening-line2">"楽しく" 学びたい あなたへ──</div>
+  </div>
+</div>
+
+
+
 <!-- ←★ 実績画像のアニメーションとYouTube -->
   <div class="lp-wrapper">
   <img class="jisseki-img slide-in-left" src="images/jisseki-v2.png" alt="実績">
@@ -269,6 +278,27 @@ document.addEventListener("DOMContentLoaded", () => {
 <a href="https://forms.gle/uLs4y9MdGrtqnnUo8" class="floating-btn" target="_blank" rel="noopener noreferrer">
   <img src="images/fbtn.png" alt="申し込みボタン" />
 </a>
+
+
+<script>
+  window.addEventListener("load", () => {
+    const overlay = document.getElementById("opening-overlay");
+    const line1 = document.getElementById("opening-line1");
+    const line2 = document.getElementById("opening-line2");
+
+    setTimeout(() => {
+      line1.classList.add("fade-in");
+    }, 300);
+
+    setTimeout(() => {
+      line2.classList.add("fade-in");
+    }, 1300);
+
+    setTimeout(() => {
+      overlay.classList.add("fade-out");
+    }, 3000);
+  });
+</script>
 
 
 
