@@ -302,7 +302,7 @@ footer a {
   left: 50%; /* ← 0% → 50% にする！ */
   transform: translateX(-50%) scale(0.6); /* ← 初期値で scale も一緒に指定 */
   width: 140%;
-  z-index: 5;
+  z-index: 2;
 }
 
 .orange-img.show {
